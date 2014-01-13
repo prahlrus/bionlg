@@ -1,0 +1,79 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+@prefix bio:	<http://purl.org/vocab/bio/0.1/> .
+
+Address a rdfs:Class .
+
+addressName a rdf:Property
+	; rdfs:range rdfs:Literal
+	; rdfs:domain Address
+	.
+
+AddrEvent a rdfs:Class
+	; rdfs:subClassOf bio:Event
+.
+
+AddrEnd a rdfs:Class
+	; rdfs:subClassOf AddrEvent
+.
+
+address a rdfs:Property
+	; rdfs:domain AddrEvent
+	; rdfs:range Address
+.
+
+endAddress a rdfs:Property
+	; rdfs:domain AddrEnd
+	; rdfs:range Address
+.
+
+AddrInterval a rdfs:Class
+	; rdfs:subClassOf bio:Interval
+.
+
+Unknown a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+Basic a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+MovedTo a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+	
+FormerAddress a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+LastKnownAddress a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+AncestralAddress a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+ActualResidence a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+HouseholdRegistrationAddress a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+BirthAddress a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+BurialAddress a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+DeathAddress a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+MigrationRouteBranch a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+Visited a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+EightBannerQingDynasty a rdf:Property
+	; rdfs:subClassOf AddrEvent .
+
+AlternateBasic a rdf:Property
+	; rdfs:subClassOf AddrEvent .

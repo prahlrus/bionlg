@@ -1,0 +1,21 @@
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+###
+
+These programs are utility programs for dealing with the Chinese Biographical Database. They are copyright December 2012 by William Prahl and John David Stone. 
+
+To convert the CBDB into RDF, enter into one shell window
+
+cat my_pipe | ./rdf_cleanup.rb > OUTPUT_FILENAME
+
+And then enter into another shell window
+
+./csv_to_rdf.rb DATA_PATH SCHEMATA_PATH
+
+Where DATA_PATH is a path to the directory containing the CSV files and SCHEMATA_PATH is a path to a directory containing the RDF schemata files that the csvconverter uses.
+
+To split an RDF file for use with the Biographical NLG system, pipe the file into rdf_splitter.rb with the command line argument of a path to the directory into which you want the data stored.

@@ -1,0 +1,112 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+@prefix bio:	<http://purl.org/vocab/bio/0.1/> .
+@prefix rel:	<http://purl.org/vocab/relationship/> .
+
+Gender a rdfs:Class .
+
+Male a Gender .
+
+Female a Gender .
+
+hasGender a rdf:Property
+	; rdfs:domain foaf:Person
+	; rdfs:range Gender
+.
+
+SocialStatus a rdfs:Class .
+
+statusName a rdf:Property
+	; rdfs:domain SocialStatus
+	; rdfs:range rdfs:Literal
+.
+
+StatusEvent a rdfs:Class
+	; rdfs:subClassOf bio:Event
+.
+
+StatusStart a rdfs:Class
+	; rdfs:subClassOf StatusEvent
+.
+
+StatusEnd a rdfs:Class
+	; rdfs:subClassOf StatusEvent
+.
+
+status a rdfs:Property
+	; rdfs:domain StatusEvent
+	; rdfs:range SocialStatus
+.
+
+endStatus a rdfs:Property
+	; rdfs:domain StatusEnd
+	; rdfs:range SocialStatus
+.
+
+StatusInterval a rdfs:Class
+	; rdfs:subClassOf bio:Interval
+.
+
+Office a rdfs:Class .
+
+officeName a rdf:Property
+	; rdfs:domain Office
+	; rdfs:range rdfs:Literal
+.
+
+PostingEvent a rdfs:Class
+	; rdfs:subClassOf bio:Event
+.
+
+PostingStart a rdfs:Class
+	; rdfs:subClassOf PostingEvent
+.
+
+PostingEnd a rdfs:Class
+	; rdfs:subClassOf PostingEvent
+.
+
+office a rdf:Property
+	; rdfs:domain PostingEvent
+	; rdfs:range Office
+.
+
+endOffice a rdf:Property
+	; rdfs:domain PostingEnd
+	; rdfs:range Office
+.
+
+PostingInterval a rdfs:Class
+	; rdfs:subClassOf bio:Interval
+.
+
+postedTo a rdf:Property
+	; rdfs:domain PostingEvent
+	; rdfs:range addresses:Address
+.
+
+KinRelation a rdfs:Class
+	; rdfs:subClassOf rel:Relationship
+.
+
+kinType a rdf:Property
+	; rdfs:domain KinRelation
+	; rdfs:range rdfs:Literal
+.
+
+nucleus a rdf:Property
+	; rdfs:domain KinRelation
+	; rdfs:range foaf:person
+.
+
+satellite a rdf:Property
+	; rdfs:domain KinRelation
+	; rdfs:range foaf:Person
+.
+
+kin a rdf:Property
+	; rdfs:domain foaf:Person
+	; rdfs:range KinRelation
+.

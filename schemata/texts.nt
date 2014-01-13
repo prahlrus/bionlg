@@ -1,0 +1,47 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+Text a rdfs:Class .
+
+textTitle a rdf:Property
+	; rdfs:range rdfs:Literal
+	; rdfs:domain Text
+	.
+
+TextRelation a rdf:Property 
+	; rdfs:range foaf:Person
+	; rdfs:domain Text
+	.
+
+Unknown a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
+Author a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
+Editor a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
+Compiler a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
+Publisher a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
+Donor a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
+Recipient a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
+Translator a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
+Commentator a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
+WorkIncluded a rdf:Property
+	; rdfs:subPropertyOf TextRelation .
+
